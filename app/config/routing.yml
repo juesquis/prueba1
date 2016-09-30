@@ -1,0 +1,15 @@
+test_random:
+    resource: "@TestRandomBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+random:
+    path:     /random/{limit}
+    defaults: { _controller: TestRandomBundle:Random:index }
+
+random2:
+    path:     /random2/{n1}-{n2}
+    defaults: { _controller: TestRandomBundle:Random2:index,n1:0,n2:1000 }
